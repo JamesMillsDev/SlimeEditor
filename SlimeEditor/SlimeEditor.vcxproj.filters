@@ -1,0 +1,296 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Catalyst">
+      <UniqueIdentifier>{ce7e194b-8ed5-48c8-a65f-27a846c1c354}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Catalyst\Header Files">
+      <UniqueIdentifier>{61cf1dcf-f4a3-4a0a-99c1-d4af0e136682}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Catalyst\Header Files\Actors">
+      <UniqueIdentifier>{e4ae4ecd-fab2-47d8-aaf6-f59f69fbbb9c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Catalyst\Source Files">
+      <UniqueIdentifier>{f377d189-ae6c-4d2c-b1de-fab55f2ecf43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game">
+      <UniqueIdentifier>{2cfaa270-0bd8-40dc-8a79-6beabbea2123}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Game\Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Game\Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Catalyst\Source Files\Actors">
+      <UniqueIdentifier>{ba67a86b-3489-456b-b289-d96299dc73ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Catalyst\Header Files\Utilities">
+      <UniqueIdentifier>{f1247a57-6309-44d1-9ebe-f0dbe77d80c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Catalyst\Header Files\Levels">
+      <UniqueIdentifier>{69d4bb6d-5a6b-4293-8a49-643ba8e396d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Catalyst\Source Files\Levels">
+      <UniqueIdentifier>{2282a181-5757-44cf-a286-01d754f28d84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Catalyst\Source Files\Utilities">
+      <UniqueIdentifier>{6b12c87e-2586-4468-8ed7-818afc328cdf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Catalyst\Header Files\Network">
+      <UniqueIdentifier>{e2b265ad-a282-49ca-856f-1df7e94a9714}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Catalyst\Source Files\Network">
+      <UniqueIdentifier>{5aae19ca-61eb-4d77-a442-00336e4c4a53}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Catalyst\Header Files\Network\Packets">
+      <UniqueIdentifier>{2a1980b4-1ec3-4b8d-8f2d-20c297c499f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Catalyst\Source Files\Network\Packets">
+      <UniqueIdentifier>{e51503ef-ea73-4a63-ae02-7957137b3904}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Catalyst\Header Files\Graphics">
+      <UniqueIdentifier>{e1f9c747-fae3-4988-830e-34e42ace3156}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Catalyst\Source Files\Graphics">
+      <UniqueIdentifier>{152933d1-957a-48a2-9f51-0b0b2c943337}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Catalyst\Header Files\Network\Actors">
+      <UniqueIdentifier>{f0de09f7-fad4-49cb-b85f-80b20c59c3f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Catalyst\Source Files\Network\Actors">
+      <UniqueIdentifier>{fef70ad7-25a4-4fe4-a548-7faab5b61c11}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Header Files\Network">
+      <UniqueIdentifier>{f60b026d-d65b-4e55-9f33-8def32781dd3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Source Files\Network">
+      <UniqueIdentifier>{a75b19c5-4ee8-4007-a01a-9e2b3ea317c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Source Files\Levels">
+      <UniqueIdentifier>{72254992-6f08-4360-91f4-4f69e805e145}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Header Files\Levels">
+      <UniqueIdentifier>{c3877771-ccea-4940-a7e6-513f43e293e8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\main.cpp">
+      <Filter>Game\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Catalyst\Application.cpp">
+      <Filter>Catalyst\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Catalyst\GameInstance.cpp">
+      <Filter>Catalyst\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Catalyst\Screen.cpp">
+      <Filter>Catalyst\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Catalyst\Actors\Actor.cpp">
+      <Filter>Catalyst\Source Files\Actors</Filter>
+    </ClCompile>
+    <ClCompile Include="Catalyst\Actors\ActorManager.cpp">
+      <Filter>Catalyst\Source Files\Actors</Filter>
+    </ClCompile>
+    <ClCompile Include="Catalyst\Actors\ActorTransform.cpp">
+      <Filter>Catalyst\Source Files\Actors</Filter>
+    </ClCompile>
+    <ClCompile Include="Catalyst\Levels\Level.cpp">
+      <Filter>Catalyst\Source Files\Levels</Filter>
+    </ClCompile>
+    <ClCompile Include="Catalyst\Levels\LevelManager.cpp">
+      <Filter>Catalyst\Source Files\Levels</Filter>
+    </ClCompile>
+    <ClCompile Include="Catalyst\Utilities\Color.cpp">
+      <Filter>Catalyst\Source Files\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="Catalyst\Utilities\Config.cpp">
+      <Filter>Catalyst\Source Files\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="Catalyst\Utilities\GameTime.cpp">
+      <Filter>Catalyst\Source Files\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="Catalyst\Network\Network.cpp">
+      <Filter>Catalyst\Source Files\Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Catalyst\Network\NetworkClient.cpp">
+      <Filter>Catalyst\Source Files\Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Catalyst\Network\NetworkServer.cpp">
+      <Filter>Catalyst\Source Files\Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Catalyst\Network\INetworkSide.cpp">
+      <Filter>Catalyst\Source Files\Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Catalyst\Network\Packets\IPacketHandler.cpp">
+      <Filter>Catalyst\Source Files\Network\Packets</Filter>
+    </ClCompile>
+    <ClCompile Include="Catalyst\Network\Packets\Packet.cpp">
+      <Filter>Catalyst\Source Files\Network\Packets</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SlimeGameInstance.cpp">
+      <Filter>Game\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Catalyst\Input.cpp">
+      <Filter>Catalyst\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Catalyst\Actors\ActorComponent.cpp">
+      <Filter>Catalyst\Source Files\Actors</Filter>
+    </ClCompile>
+    <ClCompile Include="Catalyst\Graphics\SpriteRenderer.cpp">
+      <Filter>Catalyst\Source Files\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Catalyst\Graphics\Sprite.cpp">
+      <Filter>Catalyst\Source Files\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Catalyst\Graphics\Texture.cpp">
+      <Filter>Catalyst\Source Files\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Catalyst\Utilities\Rectangle.cpp">
+      <Filter>Catalyst\Source Files\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="Catalyst\Network\Actors\NetworkActor.cpp">
+      <Filter>Catalyst\Source Files\Network\Actors</Filter>
+    </ClCompile>
+    <ClCompile Include="Catalyst\Network\Actors\NetworkTransform.cpp">
+      <Filter>Catalyst\Source Files\Network\Actors</Filter>
+    </ClCompile>
+    <ClCompile Include="Catalyst\Network\IAuthorityProvider.cpp">
+      <Filter>Catalyst\Source Files\Network</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Network\TestNetworkActor.cpp">
+      <Filter>Game\Source Files\Network</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Levels\EditorLevel.cpp">
+      <Filter>Game\Source Files\Levels</Filter>
+    </ClCompile>
+    <ClCompile Include="Catalyst\Network\Actors\INetworkPlayer.cpp">
+      <Filter>Catalyst\Source Files\Network\Actors</Filter>
+    </ClCompile>
+    <ClCompile Include="Catalyst\Network\NetId.cpp">
+      <Filter>Catalyst\Source Files\Network</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="assets\config.xml">
+      <Filter>Game\Resource Files</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="assets\crate.png">
+      <Filter>Game\Resource Files</Filter>
+    </CopyFileToFolders>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Catalyst\GameInstance.h">
+      <Filter>Catalyst\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Catalyst\Screen.h">
+      <Filter>Catalyst\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Catalyst\Application.h">
+      <Filter>Catalyst\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Catalyst\Actors\Actor.h">
+      <Filter>Catalyst\Header Files\Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="Catalyst\Actors\ActorManager.h">
+      <Filter>Catalyst\Header Files\Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="Catalyst\Actors\ActorTransform.h">
+      <Filter>Catalyst\Header Files\Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="Catalyst\Utilities\Collections.h">
+      <Filter>Catalyst\Header Files\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Catalyst\Utilities\Color.h">
+      <Filter>Catalyst\Header Files\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Catalyst\Utilities\Config.h">
+      <Filter>Catalyst\Header Files\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Catalyst\Utilities\GameTime.h">
+      <Filter>Catalyst\Header Files\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Catalyst\Levels\Level.h">
+      <Filter>Catalyst\Header Files\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Catalyst\Levels\LevelManager.h">
+      <Filter>Catalyst\Header Files\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Catalyst\Utilities\StringUtilities.h">
+      <Filter>Catalyst\Header Files\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Catalyst\Network\INetworkSide.h">
+      <Filter>Catalyst\Header Files\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Catalyst\Network\Network.h">
+      <Filter>Catalyst\Header Files\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Catalyst\Network\NetworkClient.h">
+      <Filter>Catalyst\Header Files\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Catalyst\Network\NetworkServer.h">
+      <Filter>Catalyst\Header Files\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Catalyst\Network\Packets\Packet.h">
+      <Filter>Catalyst\Header Files\Network\Packets</Filter>
+    </ClInclude>
+    <ClInclude Include="Catalyst\Network\Packets\IPacketHandler.h">
+      <Filter>Catalyst\Header Files\Network\Packets</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SlimeGameInstance.h">
+      <Filter>Game\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Catalyst\Input.h">
+      <Filter>Catalyst\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Catalyst\Actors\ActorComponent.h">
+      <Filter>Catalyst\Header Files\Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="Catalyst\Graphics\SpriteRenderer.h">
+      <Filter>Catalyst\Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Catalyst\Graphics\Sprite.h">
+      <Filter>Catalyst\Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Catalyst\Graphics\Texture.h">
+      <Filter>Catalyst\Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Catalyst\Common.h">
+      <Filter>Catalyst\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Catalyst\Types.h">
+      <Filter>Catalyst\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Catalyst\Utilities\Rectangle.h">
+      <Filter>Catalyst\Header Files\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Catalyst\Network\Actors\NetworkActor.h">
+      <Filter>Catalyst\Header Files\Network\Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="Catalyst\Network\Actors\NetworkTransform.h">
+      <Filter>Catalyst\Header Files\Network\Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="Catalyst\Network\IAuthorityProvider.h">
+      <Filter>Catalyst\Header Files\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Network\TestNetworkActor.h">
+      <Filter>Game\Header Files\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Levels\EditorLevel.h">
+      <Filter>Game\Header Files\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Catalyst\Network\Actors\INetworkPlayer.h">
+      <Filter>Catalyst\Header Files\Network\Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="Catalyst\Network\NetId.h">
+      <Filter>Catalyst\Header Files\Network</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

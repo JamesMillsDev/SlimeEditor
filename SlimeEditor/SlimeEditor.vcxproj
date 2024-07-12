@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{a0841fbf-979d-42dc-96ca-8b5e9827ee20}</ProjectGuid>
+    <RootNamespace>SlimeEditor</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)Builds\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)Intermediate\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)Builds\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)Intermediate\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)Builds\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)Intermediate\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)Builds\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)Intermediate\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\include\;$(ProjectDir)src;$(ProjectDir);</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\lib\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>ws2_32.lib;enet64.lib;glew32.lib;assimp-vc143-mt.lib;glfw3dll.lib;winmm.lib;kernel32.lib;opengl32.lib;gdi32.lib;pugixml_d.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy /Y "$(SolutionDir)Dependencies\lib\glfw3.dll" "$(OutDir)glfw3.dll"
+copy /Y "$(SolutionDir)Dependencies\lib\assimp-vc143-mt.dll" "$(OutDir)assimp-vc143-mt.dll"
+copy /Y "$(SolutionDir)Dependencies\lib\glew32.dll" "$(OutDir)glew32.dll"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\include\;$(ProjectDir)src;$(ProjectDir);</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\lib\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>ws2_32.lib;enet64.lib;glew32.lib;assimp-vc143-mt.lib;glfw3dll.lib;winmm.lib;kernel32.lib;opengl32.lib;gdi32.lib;pugixml.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy /Y "$(SolutionDir)Dependencies\lib\glfw3.dll" "$(OutDir)glfw3.dll"
+copy /Y "$(SolutionDir)Dependencies\lib\assimp-vc143-mt.dll" "$(OutDir)assimp-vc143-mt.dll"
+copy /Y "$(SolutionDir)Dependencies\lib\glew32.dll" "$(OutDir)glew32.dll"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\include\;$(ProjectDir)src;$(ProjectDir);</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\lib\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>ws2_32.lib;enet64.lib;glew32.lib;assimp-vc143-mt.lib;glfw3dll.lib;winmm.lib;kernel32.lib;opengl32.lib;gdi32.lib;pugixml_d.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy /Y "$(SolutionDir)Dependencies\lib\glfw3.dll" "$(OutDir)glfw3.dll"
+copy /Y "$(SolutionDir)Dependencies\lib\assimp-vc143-mt.dll" "$(OutDir)assimp-vc143-mt.dll"
+copy /Y "$(SolutionDir)Dependencies\lib\glew32.dll" "$(OutDir)glew32.dll"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\include\;$(ProjectDir)src;$(ProjectDir);</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\lib\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>ws2_32.lib;enet64.lib;glew32.lib;assimp-vc143-mt.lib;glfw3dll.lib;winmm.lib;kernel32.lib;opengl32.lib;gdi32.lib;pugixml.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy /Y "$(SolutionDir)Dependencies\lib\glfw3.dll" "$(OutDir)glfw3.dll"
+copy /Y "$(SolutionDir)Dependencies\lib\assimp-vc143-mt.dll" "$(OutDir)assimp-vc143-mt.dll"
+copy /Y "$(SolutionDir)Dependencies\lib\glew32.dll" "$(OutDir)glew32.dll"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Catalyst\Actors\Actor.cpp" />
+    <ClCompile Include="Catalyst\Actors\ActorComponent.cpp" />
+    <ClCompile Include="Catalyst\Actors\ActorManager.cpp" />
+    <ClCompile Include="Catalyst\Actors\ActorTransform.cpp" />
+    <ClCompile Include="Catalyst\Application.cpp" />
+    <ClCompile Include="Catalyst\GameInstance.cpp" />
+    <ClCompile Include="Catalyst\Graphics\Sprite.cpp" />
+    <ClCompile Include="Catalyst\Graphics\SpriteRenderer.cpp" />
+    <ClCompile Include="Catalyst\Graphics\Texture.cpp" />
+    <ClCompile Include="Catalyst\Input.cpp" />
+    <ClCompile Include="Catalyst\Levels\Level.cpp" />
+    <ClCompile Include="Catalyst\Levels\LevelManager.cpp" />
+    <ClCompile Include="Catalyst\Network\Actors\INetworkPlayer.cpp" />
+    <ClCompile Include="Catalyst\Network\Actors\NetworkActor.cpp" />
+    <ClCompile Include="Catalyst\Network\Actors\NetworkTransform.cpp" />
+    <ClCompile Include="Catalyst\Network\IAuthorityProvider.cpp" />
+    <ClCompile Include="Catalyst\Network\INetworkSide.cpp" />
+    <ClCompile Include="Catalyst\Network\Network.cpp" />
+    <ClCompile Include="Catalyst\Network\NetworkClient.cpp" />
+    <ClCompile Include="Catalyst\Network\NetId.cpp" />
+    <ClCompile Include="Catalyst\Network\NetworkServer.cpp" />
+    <ClCompile Include="Catalyst\Network\Packets\IPacketHandler.cpp" />
+    <ClCompile Include="Catalyst\Network\Packets\Packet.cpp" />
+    <ClCompile Include="Catalyst\Screen.cpp" />
+    <ClCompile Include="Catalyst\Utilities\Color.cpp" />
+    <ClCompile Include="Catalyst\Utilities\Config.cpp" />
+    <ClCompile Include="Catalyst\Utilities\GameTime.cpp" />
+    <ClCompile Include="Catalyst\Utilities\Rectangle.cpp" />
+    <ClCompile Include="src\Levels\EditorLevel.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Network\TestNetworkActor.cpp" />
+    <ClCompile Include="src\SlimeGameInstance.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="assets\config.xml">
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)assets/</DestinationFolders>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OutDir)assets/</DestinationFolders>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)assets/</DestinationFolders>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)assets/</DestinationFolders>
+    </CopyFileToFolders>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Catalyst\Actors\Actor.h" />
+    <ClInclude Include="Catalyst\Actors\ActorComponent.h" />
+    <ClInclude Include="Catalyst\Actors\ActorManager.h" />
+    <ClInclude Include="Catalyst\Actors\ActorTransform.h" />
+    <ClInclude Include="Catalyst\Application.h" />
+    <ClInclude Include="Catalyst\Common.h" />
+    <ClInclude Include="Catalyst\GameInstance.h" />
+    <ClInclude Include="Catalyst\Graphics\Sprite.h" />
+    <ClInclude Include="Catalyst\Graphics\SpriteRenderer.h" />
+    <ClInclude Include="Catalyst\Graphics\Texture.h" />
+    <ClInclude Include="Catalyst\Input.h" />
+    <ClInclude Include="Catalyst\Levels\Level.h" />
+    <ClInclude Include="Catalyst\Levels\LevelManager.h" />
+    <ClInclude Include="Catalyst\Network\Actors\INetworkPlayer.h" />
+    <ClInclude Include="Catalyst\Network\Actors\NetworkActor.h" />
+    <ClInclude Include="Catalyst\Network\Actors\NetworkTransform.h" />
+    <ClInclude Include="Catalyst\Network\IAuthorityProvider.h" />
+    <ClInclude Include="Catalyst\Network\INetworkSide.h" />
+    <ClInclude Include="Catalyst\Network\Network.h" />
+    <ClInclude Include="Catalyst\Network\NetworkClient.h" />
+    <ClInclude Include="Catalyst\Network\NetId.h" />
+    <ClInclude Include="Catalyst\Network\NetworkServer.h" />
+    <ClInclude Include="Catalyst\Network\Packets\IPacketHandler.h" />
+    <ClInclude Include="Catalyst\Network\Packets\Packet.h" />
+    <ClInclude Include="Catalyst\Screen.h" />
+    <ClInclude Include="Catalyst\Types.h" />
+    <ClInclude Include="Catalyst\Utilities\Collections.h" />
+    <ClInclude Include="Catalyst\Utilities\Color.h" />
+    <ClInclude Include="Catalyst\Utilities\Config.h" />
+    <ClInclude Include="Catalyst\Utilities\GameTime.h" />
+    <ClInclude Include="Catalyst\Utilities\Rectangle.h" />
+    <ClInclude Include="Catalyst\Utilities\StringUtilities.h" />
+    <ClInclude Include="src\Levels\EditorLevel.h" />
+    <ClInclude Include="src\Network\TestNetworkActor.h" />
+    <ClInclude Include="src\SlimeGameInstance.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="assets\crate.png">
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)assets/</DestinationFolders>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OutDir)assets/</DestinationFolders>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)assets/</DestinationFolders>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)assets/</DestinationFolders>
+    </CopyFileToFolders>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

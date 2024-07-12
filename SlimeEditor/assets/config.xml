@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Config>
+  <Categories>
+    <Category title="screen">
+      <Value name="width" value="1080" type="int"/>
+      <Value name="height" value="720" type="int"/>
+      <Value name="clrCol" value="245,245,245,255" type="color"/>
+    </Category>
+    <Category title="application">
+      <Value name="title" value="Slimes" type="string"/>
+      <Value name="quitKey" value="256" type="int"/>
+    </Category>
+    <Category title="debug">
+      <Value name="configReloadKey" value="290" type="int"/>
+    </Category>
+  </Categories>
+</Config>

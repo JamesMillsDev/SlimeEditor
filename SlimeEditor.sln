@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34511.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SlimeEditor", "SlimeEditor\SlimeEditor.vcxproj", "{A0841FBF-979D-42DC-96CA-8B5E9827EE20}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A0841FBF-979D-42DC-96CA-8B5E9827EE20}.Debug|x64.ActiveCfg = Debug|x64
+		{A0841FBF-979D-42DC-96CA-8B5E9827EE20}.Debug|x64.Build.0 = Debug|x64
+		{A0841FBF-979D-42DC-96CA-8B5E9827EE20}.Debug|x86.ActiveCfg = Debug|Win32
+		{A0841FBF-979D-42DC-96CA-8B5E9827EE20}.Debug|x86.Build.0 = Debug|Win32
+		{A0841FBF-979D-42DC-96CA-8B5E9827EE20}.Release|x64.ActiveCfg = Release|x64
+		{A0841FBF-979D-42DC-96CA-8B5E9827EE20}.Release|x64.Build.0 = Release|x64
+		{A0841FBF-979D-42DC-96CA-8B5E9827EE20}.Release|x86.ActiveCfg = Release|Win32
+		{A0841FBF-979D-42DC-96CA-8B5E9827EE20}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B7F5D5A5-6D86-47AB-907A-345F1D287225}
+	EndGlobalSection
+EndGlobal
