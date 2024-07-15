@@ -20,4 +20,6 @@ public:
 private:
 	Network* m_network;
 
+	bool m_isServer;
+
 };

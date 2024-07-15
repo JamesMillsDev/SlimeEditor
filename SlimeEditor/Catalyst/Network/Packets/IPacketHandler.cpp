@@ -3,12 +3,12 @@
 namespace Catalyst::Network
 {
 	IPacketHandler::IPacketHandler(const enet_uint8 _id)
-		: m_id{ _id }
+		: m_packetId{ _id }
 	{
 	}
 
-	enet_uint8 IPacketHandler::Id() const
+	enet_uint8 IPacketHandler::PacketId() const
 	{
-		return m_id;
+		return m_packetId;
 	}
 }

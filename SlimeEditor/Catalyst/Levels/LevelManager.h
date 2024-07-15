@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Catalyst/Callback.h"
+
 #include <string>
 #include <list>
 #include <map>
@@ -20,6 +22,9 @@ namespace Catalyst::Levels
 		typedef void(LevelManager::* LoadedLevelMapChange)(const char*);
 
 	public:
+		typedef list<Callback<Level*>*>::iterator LevelChangeIterator;
+
+	public:
 		LevelManager(const LevelManager&) = delete;
 		LevelManager(LevelManager&&) = delete;
 
@@ -32,15 +37,20 @@ namespace Catalyst::Levels
 		void AddLevel(Level* _level);
 		void RemoveLevel(Level* _level);
 
+		LevelChangeIterator ListenForLevelChange(Callback<Level*>* _onLevelChanged);
+		void StopListeningToLevelChange(const LevelChangeIterator& _onLevelChanged);
+
 	public:
 		LevelManager& operator=(const LevelManager&) = delete;
 		LevelManager& operator=(LevelManager&&) = delete;
 
 	private:
 		map<string, Level*> m_levels;
-		map<string, Level*> m_loaded;
+		Level* m_loaded;
 
 		list<pair<LoadedLevelMapChange, const char*>> m_loadedLevelMapChanges;
+
+		list<Callback<Level*>*> m_levelChangeListeners;
 
 	private:
 		LevelManager();
@@ -48,7 +58,7 @@ namespace Catalyst::Levels
 
 	private:
 		void Tick();
-		void Render();
+		void Render() const;
 
 		void LoadLevel(const char* _name);
 		void UnloadLevel(const char* _name);

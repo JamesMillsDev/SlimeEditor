@@ -171,10 +171,19 @@
     <ClCompile Include="src\Levels\EditorLevel.cpp">
       <Filter>Game\Source Files\Levels</Filter>
     </ClCompile>
-    <ClCompile Include="Catalyst\Network\Actors\INetworkPlayer.cpp">
+    <ClCompile Include="Catalyst\Network\Actors\NetworkPlayer.cpp">
       <Filter>Catalyst\Source Files\Network\Actors</Filter>
     </ClCompile>
-    <ClCompile Include="Catalyst\Network\NetId.cpp">
+    <ClCompile Include="Catalyst\Network\Packets\PlayerConnectionHandler.cpp">
+      <Filter>Game\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Catalyst\Network\Actors\NetworkActorManager.cpp">
+      <Filter>Catalyst\Source Files\Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Catalyst\Network\Actors\NetworkSpawnable.cpp">
+      <Filter>Catalyst\Source Files\Network\Actors</Filter>
+    </ClCompile>
+    <ClCompile Include="Catalyst\Network\NetworkId.cpp">
       <Filter>Catalyst\Source Files\Network</Filter>
     </ClCompile>
   </ItemGroup>
@@ -286,10 +295,25 @@
     <ClInclude Include="src\Levels\EditorLevel.h">
       <Filter>Game\Header Files\Levels</Filter>
     </ClInclude>
-    <ClInclude Include="Catalyst\Network\Actors\INetworkPlayer.h">
+    <ClInclude Include="Catalyst\Network\Actors\NetworkPlayer.h">
       <Filter>Catalyst\Header Files\Network\Actors</Filter>
     </ClInclude>
-    <ClInclude Include="Catalyst\Network\NetId.h">
+    <ClInclude Include="Catalyst\Network\Packets\PlayerConnectionHandler.h">
+      <Filter>Game\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Catalyst\Network\GlobalPacketIDs.h">
+      <Filter>Catalyst\Header Files\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Catalyst\Network\Actors\NetworkActorManager.h">
+      <Filter>Catalyst\Header Files\Network\Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="Catalyst\Network\Actors\NetworkSpawnable.h">
+      <Filter>Catalyst\Header Files\Network\Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="Catalyst\Callback.h">
+      <Filter>Catalyst\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Catalyst\Network\NetworkId.h">
       <Filter>Catalyst\Header Files\Network</Filter>
     </ClInclude>
   </ItemGroup>

@@ -40,6 +40,11 @@ namespace Catalyst::Network
 		return ReadBytes<enet_uint8>();
 	}
 
+	ushort Packet::ReadShort()
+	{
+		return ReadBytes<ushort>();
+	}
+
 	char* Packet::ReadString()
 	{
 		const size_t stringLen = ReadBytes<size_t>();
@@ -72,6 +77,11 @@ namespace Catalyst::Network
 		WriteBytes(reinterpret_cast<enet_uint8*>(&_int), sizeof(int));
 	}
 
+	void Packet::Write(ushort _short)
+	{
+		WriteBytes(reinterpret_cast<enet_uint8*>(&_short), sizeof(ushort));
+	}
+
 	void Packet::Write(bool _bool)
 	{
 		WriteBytes(reinterpret_cast<enet_uint8*>(&_bool), sizeof(bool));
@@ -86,6 +96,11 @@ namespace Catalyst::Network
 	enet_uint8 Packet::Id() const
 	{
 		return m_id;
+	}
+
+	void Packet::ResetCursor()
+	{
+		m_cursor = sizeof(enet_uint8);
 	}
 
 	void Packet::WriteBytes(const enet_uint8* _bytes, const size_t _size)

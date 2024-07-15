@@ -5,13 +5,19 @@
 #include "Level.h"
 
 #include "Catalyst/Actors/ActorManager.h"
+#include "Catalyst/Network/Network.h"
 
 namespace Catalyst::Levels
 {
+	using Network::Network;
+
 	void LevelManager::Load(const char* _level)
 	{
 		if (IsLoaded(_level) || !m_levels.contains(_level))
 			return;
+
+		if (m_loaded)
+			Unload(m_loaded->GetName().c_str());
 
 		m_loadedLevelMapChanges.emplace_back(&LevelManager::LoadLevel, _level);
 	}
@@ -26,7 +32,10 @@ namespace Catalyst::Levels
 
 	bool LevelManager::IsLoaded(const string& _level) const
 	{
-		return m_loaded.contains(_level);
+		if (m_loaded == nullptr)
+			return false;
+
+		return m_loaded->GetName() == _level;
 	}
 
 	void LevelManager::AddLevel(Level* _level)
@@ -46,15 +55,29 @@ namespace Catalyst::Levels
 		delete _level;
 	}
 
+	LevelManager::LevelChangeIterator LevelManager::ListenForLevelChange(Callback<Level*>* _onLevelChanged)
+	{
+		m_levelChangeListeners.emplace_back(_onLevelChanged);
+
+		auto iter = m_levelChangeListeners.end();
+		--iter;
+
+		return iter;
+	}
+
+	void LevelManager::StopListeningToLevelChange(const LevelChangeIterator& _onLevelChanged)
+	{
+		if (_onLevelChanged == m_levelChangeListeners.end())
+			return;
+
+		m_levelChangeListeners.erase(_onLevelChanged);
+	}
+
 	LevelManager::LevelManager() = default;
 
 	LevelManager::~LevelManager()
 	{
-		// Unload all level instances and then clear the map
-		for (const auto& level : m_loaded | std::views::values)
-			level->OnUnloaded();
-
-		m_loaded.clear();
+		m_loaded->OnUnloaded();
 
 		// Delete all level instances then clear the map
 		for (const auto& level : m_levels | std::views::values)
@@ -71,32 +94,34 @@ namespace Catalyst::Levels
 
 		m_loadedLevelMapChanges.clear();
 
-		// Iterate through all level instances in the loaded map and tick them
-		for (const auto& level : m_loaded | std::views::values)
+		if (m_loaded)
 		{
-			level->Tick();
-			level->m_actorManager->Tick();
+			m_loaded->Tick();
+			m_loaded->m_actorManager->Tick();
 		}
 	}
 
-	void LevelManager::Render()
+	void LevelManager::Render() const
 	{
-		for (const auto& level : m_loaded | std::views::values)
+		if (m_loaded)
 		{
-			level->Render();
-			level->m_actorManager->Render();
+			m_loaded->Render();
+			m_loaded->m_actorManager->Render();
 		}
 	}
 
 	void LevelManager::LoadLevel(const char* _name)
 	{
-		m_loaded[_name] = m_levels[_name];
-		m_loaded[_name]->OnLoaded();
+		m_loaded = m_levels[_name];
+		m_loaded->OnLoaded();
+
+		for (auto& listener : m_levelChangeListeners)
+			listener->Invoke(m_loaded);
 	}
 
 	void LevelManager::UnloadLevel(const char* _name)
 	{
-		m_loaded[_name]->OnUnloaded();
-		m_loaded.erase(_name);
+		m_loaded->OnUnloaded();
+		m_loaded = nullptr;
 	}
 }

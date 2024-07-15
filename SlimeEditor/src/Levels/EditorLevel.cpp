@@ -1,6 +1,5 @@
 #include "EditorLevel.h"
 
-#include "Catalyst/Actors/ActorManager.h"
 #include "Catalyst/Network/Network.h"
 #include "Network/TestNetworkActor.h"
 
@@ -13,20 +12,10 @@ EditorLevel::EditorLevel()
 
 void EditorLevel::OnLoaded()
 {
-	if (!Network::Instance()->IsServer())
-	{
-		m_testNetworkActor = new TestNetworkActor;
-
-		GetActorManager()->Spawn(m_testNetworkActor);
-	}
+	
 }
 
 void EditorLevel::OnUnloaded()
 {
 	Level::OnUnloaded();
-
-	if (!Network::Instance()->IsServer())
-	{
-		GetActorManager()->Destroy(m_testNetworkActor);
-	}
 }

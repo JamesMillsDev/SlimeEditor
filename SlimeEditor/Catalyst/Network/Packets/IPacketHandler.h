@@ -17,9 +17,9 @@ namespace Catalyst::Network
 		IPacketHandler(IPacketHandler&&) = delete;
 
 	public:
-		[[nodiscard]] enet_uint8 Id() const;
+		[[nodiscard]] enet_uint8 PacketId() const;
 
-		virtual void Read(Packet* _packet) = 0;
+		virtual bool Read(Packet* _packet) = 0;
 		virtual void Handle() = 0;
 
 	public:
@@ -27,7 +27,7 @@ namespace Catalyst::Network
 		IPacketHandler& operator=(IPacketHandler&&) = delete;
 
 	private:
-		enet_uint8 m_id;
+		enet_uint8 m_packetId;
 
 	};
 }

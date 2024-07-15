@@ -3,6 +3,8 @@
 #include <stdexcept>
 #include <enet/enet.h>
 
+#include "Catalyst/Types.h"
+
 namespace Catalyst::Network
 {
 	class INetworkSide;
@@ -20,15 +22,19 @@ namespace Catalyst::Network
 		int ReadInt();
 		bool ReadBool();
 		enet_uint8 ReadByte();
+		ushort ReadShort();
 		char* ReadString();
 
 		void Write(float _float);
 		void Write(enet_uint8 _byte);
 		void Write(int _int);
+		void Write(ushort _short);
 		void Write(bool _bool);
 		void Write(char* _string, size_t _len);
 
 		[[nodiscard]] enet_uint8 Id() const;
+
+		void ResetCursor();
 
 	protected:
 		void WriteBytes(const enet_uint8* _bytes, size_t _size);

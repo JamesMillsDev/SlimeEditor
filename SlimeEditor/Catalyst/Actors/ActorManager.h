@@ -19,7 +19,7 @@ namespace Catalyst::Actors
 
 	class Actor;
 
-	class ActorManager final
+	class ActorManager
 	{
 		friend Level;
 		friend LevelManager;

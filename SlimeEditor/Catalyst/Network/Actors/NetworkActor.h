@@ -8,7 +8,7 @@ using Catalyst::Actors::Actor;
 namespace Catalyst::Network
 {
 	class NetworkTransform;
-	class NetId;
+	class NetworkId;
 
 	class NetworkActor : public Actor, public IAuthorityProvider
 	{
@@ -17,6 +17,9 @@ namespace Catalyst::Network
 	public:
 		NetworkActor();
 
+	public:
+		NetworkId* Id() const;
+
 	protected:
 		void BeginPlay() override;
 
@@ -24,9 +27,9 @@ namespace Catalyst::Network
 
 		void OnAuthorityStateChanged() override;
 
-	private:
+	protected:
 		NetworkTransform* m_netTransform;
-		NetId* m_id;
+		NetworkId* m_id;
 
 	};
 }

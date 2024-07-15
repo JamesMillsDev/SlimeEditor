@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Catalyst/Types.h"
 #include "Catalyst/Actors/ActorComponent.h"
 #include "Catalyst/Actors/ActorTransform.h"
 #include "Catalyst/Network/IAuthorityProvider.h"
@@ -10,7 +11,7 @@ namespace Catalyst::Network
 	using Actors::ActorTransform;
 	using Actors::ActorComponent;
 
-	constexpr enet_uint8 TRANSFORM_PACKET_ID = 255;
+	class NetworkActor;
 
 	class NetworkTransform final : public ActorComponent, public IPacketHandler, public IAuthorityProvider
 	{
@@ -18,7 +19,7 @@ namespace Catalyst::Network
 		NetworkTransform();
 
 	public:
-		void Read(Packet* _packet) override;
+		bool Read(Packet* _packet) override;
 		void Handle() override;
 
 		void SetSyncInterval(float _interval);
@@ -35,6 +36,11 @@ namespace Catalyst::Network
 
 		float m_syncTime;
 		float m_syncInterval;
+
+		ushort m_targetId;
+
+	private:
+		NetworkActor* NetOwner() const;
 
 	};
 }
